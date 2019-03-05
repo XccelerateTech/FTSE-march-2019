@@ -1,0 +1,14 @@
+{
+  "name": "two-fer",
+  "version": "1.0.0",
+  "description": "`Two-fer` or `2-fer` is short for two for one. One for you and one for me.",
+  "main": "two-fer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "jasmine": "^3.3.1"
+  }
+}

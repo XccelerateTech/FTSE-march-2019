@@ -1,0 +1,24 @@
+div {
+    height: 100px;
+    width: 100px;
+}
+
+
+.blue {
+    background-color: blue;
+    float: left;
+}
+
+.green {
+    background-color: green;
+    float: right;
+
+}
+
+.red {
+    background-color: red;
+    clear: both;
+    margin: 0 auto;
+
+}
+

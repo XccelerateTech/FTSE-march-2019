@@ -4,22 +4,31 @@
 // Make sure to look at hello-world.spec.js--that should give you some hints about what is
 // expected here.
 
+export const hello = () => {
+    return `Hello, World!`
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // var HelloWorld = function () {};
 
 // HelloWorld.prototype.hello = function (input) {
 // return "Hello, World!";
 // }
 
-//method 1
-// export default class HelloWorld {
-//     hello (){
-//         return "Hello, World!";
-//     }
-// }
-
-
-//method 2
-export const hello = () => {
-    return "Hello, World!";
-}
-
+// module.exports = HelloWorld;
