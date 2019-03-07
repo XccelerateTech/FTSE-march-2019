@@ -1,7 +1,9 @@
+/*==========================================================================================================================content styling===================================================================*/
+
 .placeholder {
     height: 500px;
     width: 100%;
-    background-color: aquamarine;
+    background-color: #7fffd4;
     font-size: 5vh;
 }
 
@@ -13,25 +15,70 @@
 }
 
 .inverted {
-    background-color: red;
+    background-color: #ff0000;
 }
+/*====================================================================================================================Navbar=======================================================================================================================================*/
+
+.navbar {
+    background-color: #ffffff;
+}
+
+.navbar-brandActive{
+    color: #f05f40 !important;
+}
+
+.nav-link.active{
+    color: #f05f40 !important;
+font-weight: bold;
+}
+
+
+/*====================================================================================================================Jumbotron============================================================================================================================*/
 
 .jumbotron {
     margin-bottom: 0;
 }
+/*===============================================================================================================Icons========================================================================================================================================*/
 
-#box {
-    height:100px;
-    width: 100px;
-    background-color: black;
-}
 
 i {
     display: block;
     margin-top: 50px;
 }
 
-.navbar {
-    background-color: rgb(211, 208, 208);
-    opacity: 0.6;
+
+
+/*=================================================================================================================Four Pictures============================================*/
+
+.fourPic .container-fluid, .row > div {
+    padding: 0;
+    position: relative;
+}
+
+.fourPic .hint {
+    opacity: 0;
+    transition: opacity 0.5s;   
+    background: #382dd3e6;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: #00000099;
+}
+
+.fourPic .hint:hover {
+    opacity: 1;
+}
+
+.fourPic .hint span.word {
+    display:    block;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: capitalize;
 }

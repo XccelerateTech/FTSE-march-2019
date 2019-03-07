@@ -15,10 +15,9 @@
         integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <link rel="stylesheet" href="./assets/css/animate.css">
     <link rel="stylesheet" type="text/css" media="screen" href="./assets/css/main.css">
-
 </head>
 
-<body data-spy="scroll" data-target=".navbar" data-offset="50">
+<body data-spy="scroll" data-target=".navbar" data-offset="100">
     <!--Setting up the navbar and the hamburger menu. -->
     <nav class="navbar navbar-expand-lg navbar-light fixed-top">
         <a class="navbar-brand" href="#">The Only Template you will Need</a>
@@ -29,7 +28,9 @@
 
         <!--Nav bar items-->
         <div class="collapse navbar-collapse" id="navbarTogglerDemo">
+
             <ul class="navbar-nav ml-auto">
+
                 <li class="nav-item">
                     <a class="nav-link" href="#about">About</a>
                 </li>
@@ -40,11 +41,12 @@
                     <a class="nav-link" href="#4-pictures">Gallery</a>
                 </li>
                 <li class="nav-item">
+                    <a class="nav-link" href="#superSection">Extra Section</a>
+                </li>
+                <li class="nav-item">
                     <a class="nav-link" href="#call-me">Contact Me</a>
                 </li>
-
             </ul>
-
         </div>
     </nav>
 
@@ -56,6 +58,8 @@
             <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p>
         </div>
     </section>
+
+    
     <section id="about">
         <div class="placeholder center">
             <div>
@@ -63,39 +67,60 @@
             </div>
         </div>
     </section>
+
     <section id="4-icons">
         <div class="placeholder inverted">
             <div class="center">
-               <p style="margin-top: 200px">This is where the same four icons go</p> 
+                <p style="margin-top: 200px">This is where the same four icons go</p>
             </div>
             <div class="row">
                 <div class="col-4 center">
-                <i class="fab fa-accessible-icon animated bounce infinite delay-2s"></i>
+                    <i class="fab fa-accessible-icon animated bounce infinite delay-2s"></i>
                 </div>
                 <div class="col-4 center">
-                <i class="fab fa-algolia animated swing infinite delay3-s"></i>
+                    <i class="fab fa-algolia animated swing infinite delay3-s"></i>
                 </div>
                 <div class="col-4 center">
-                <i class="fas fa-american-sign-language-interpreting animated jackInTheBox infinite delay 2-s"></i>
+                    <i class="fas fa-american-sign-language-interpreting animated jackInTheBox infinite delay 2-s"></i>
                 </div>
-
             </div>
         </div>
-
     </section>
-    <section id="4-pictures">
-        <div class="placeholder center">
-            <p>This is where a small gallery lives</p>
+
+    <section id="4-pictures" class="fourPic">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-6">
+                    <img src="assets/images/1.jpg" class="img-fluid" alt="image one">
+                    <div class="hint">One thing <span class="word">Look</span></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img src="assets/images/2.jpg" class="img-fluid" alt="image twp">
+                    <div class="hint">Second thing <span class="word">At</span></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img src="assets/images/3.jpg" class="img-fluid" alt="image three">
+                    <div class="hint">Third thing <span class="word">The</span></div>
+                </div>
+                <div class="col-lg-3 col-md-6">
+                    <img src="assets/images/4.jpg" class="img-fluid" alt="image four">
+                    <div class="hint">Fourth thing <span class="word">Magic</span></div>
+                </div>
+            </div>
         </div>
-
     </section>
+
+    <section id="superSection">
+        <div class="placeholder center">
+            <p>Wow what a fantastic layout</p>
+        </div>
+    </section>
+
     <footer id="call-me">
         <div class="placeholder center inverted">
             This is like a contact me section.
         </div>
-
     </footer>
-
 
 
 
@@ -110,6 +135,43 @@
         crossorigin="anonymous"></script>
     <script src="./assets/javascript/smooth-scroll.min.js"></script>
     <script src="./assets/javascript/main.js"></script>
+
+    <script>
+
+        // initialise smooth scroll (it needs jquery to work)
+        var scroll = new SmoothScroll('a[href*="#"]');
+
+        (function ($) {
+
+            /**
+             * Copyright 2012, Digital Fusion
+             * Licensed under the MIT license.
+             * http://teamdf.com/jquery-plugins/license/
+             *
+             * @author Sam Sehnert
+             * @desc A small plugin that checks whether elements are within
+             *     the user visible viewport of a web browser.
+             *     only accounts for vertical position, not horizontal.
+             */
+
+            $.fn.visible = function (partial) {
+
+                var $t = $(this),
+                    $w = $(window),
+                    viewTop = $w.scrollTop(),
+                    viewBottom = viewTop + $w.height(),
+                    _top = $t.offset().top,
+                    _bottom = _top + $t.height(),
+                    compareTop = partial === true ? _bottom : _top,
+                    compareBottom = partial === true ? _top : _bottom;
+
+                return ((compareBottom <= viewBottom) && (compareTop >= viewTop));
+
+            };
+
+        })(jQuery);
+
+    </script>
 
 </body>
 
