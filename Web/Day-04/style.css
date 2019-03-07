@@ -1,0 +1,266 @@
+/* general */
+
+body {
+    font-family: Merriweather, 'Helvetica Neue', Arial, sans-serif;
+    text-align: center;
+    position: relative;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Open Sans', 'Helvetica Neue', Arial, sans-serif;
+}
+
+h1::after, h2::after {
+    content: "";
+    display: block;
+    height: 3px;
+    width: 53px;
+    margin: 1.5rem auto;
+    background-color: #f05f40;
+}
+
+a {
+    color: #000000;
+}
+
+
+
+.invert h1::after, .invert  h2::after {
+    background-color: #fff;
+}
+
+.btn {
+    background-color: #f05f40;
+    color: #fff;
+    border-radius: 30px;
+    font-weight: bold;
+    padding: 0.75rem 1.75rem;
+    text-transform: uppercase;
+    font-size: 0.75rem;
+}
+
+.btn-lg {
+    padding: 1rem 2rem;
+    font-size: 0.85rem;
+}
+
+.navbar {
+    background: #fff;
+    border-bottom: solid 1px #fff;
+    opacity: 0.3;
+    color: #000000 !important;
+    font-weight: bold;
+}
+
+.solid {
+    background: #fff;
+    border-bottom: solid 1px #fff;
+    opacity: 1;
+    transform: 0.5s;
+}
+
+.nav-link.active {
+    color: #f05f40 !important;
+    font-weight: bold;
+}
+
+.navbar-brandActive {
+    color: #f05f40 !important;
+    font-size: 1.3rem;
+
+}
+
+
+@media only screen and (max-width: 768px) {
+    .navbar-brand {
+        font-size: 0.8rem;
+    }
+}
+
+.invert {
+    background: #f05f40;
+    color: #fff;
+}
+
+.invert .btn {
+    background-color: #fff;
+    color: #000;
+}
+
+/* notebook */
+
+.notebook-hero {
+    background: url(assets/img/header.jpg) no-repeat center center;
+    background-size: cover;
+    height: 100vh;
+    padding: 30vh 15% 0;
+}
+
+.notebook-hero h1 {
+    color: #ffffff;
+    font-size: 4rem;
+    font-weight: bold;
+}
+
+.notebook-hero p {
+    padding: 0 10% 1rem;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.notebook-hero h1, .notebook-hero .btn {
+    text-transform: uppercase;
+}
+
+@media only screen and (max-width: 1200px) {
+    .notebook-hero {
+        padding: 20vh 10% 0;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .notebook-hero {
+        height: 85vh;
+    }
+    .notebook-hero h1 {
+        font-size: 8vw;
+    }
+    .notebook-hero .btn {
+        text-transform: uppercase;
+    }
+}
+
+@media only screen and (max-width: 768px) {
+    .notebook-hero .btn {
+        font-size: 0.5rem;
+    }
+}
+
+/* about */
+
+.about {
+    background: #f05f40;
+    padding: 10% 20%;
+}
+
+@media only screen and (max-width: 1200px) {
+    .about {
+        padding: 7% 10%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .about {
+        padding: 7% 5%;
+    }
+}
+
+.about p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.about .btn {
+    background-color: #fff;
+    color: #000;
+}
+
+/* four icons */
+
+.four-icons {
+    text-align: center;
+    padding: 8% 0;
+}
+
+.four-icons i.fa {
+    color: #f05f40;
+}
+
+.four-icons .row h4 {
+    margin: 1rem;
+}
+
+.four-icons p {
+    color: rgba(0, 0, 0, 0.6);
+}
+
+/* fourPic */
+
+.fourPic {
+    background: #333;
+    padding: 0 0 3%;
+}
+
+.fourPic p {
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.fourPic .container-fluid, .fourPic .row > div {
+    padding: 0;
+    position: relative;
+}
+
+.fourPic .row {
+    margin: 0;
+}
+
+.fourPic .hint {
+    opacity: 0;
+    transition: opacity 0.5s;   
+    background: rgba(240,95,64,.9);
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-transform: uppercase;
+    color: rgba(255, 255, 255, 0.6);
+}
+
+.fourPic .hint:hover {
+    opacity: 1;
+}
+
+.fourPic .hint span.word {
+    display: block;
+    font-size: 1.5rem;
+    color: #fff;
+    text-transform: capitalize;
+}
+
+.fourPic h2 {
+    margin: 1.5rem 0;
+}
+
+.fourPic h2::after {
+    display: none;
+}
+
+/* call-me */
+
+.call-me {
+    padding: 7% 10%;
+}
+
+.call-me p {
+    padding: 0 20% 1rem;
+    color: rgba(0, 0, 0, 0.6);
+}
+
+.call-me .contacts {
+    margin: 2rem 0;
+}
+
+@media only screen and (max-width: 1200px) {
+    .call-me {
+        padding: 7% 10%;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .call-me {
+        padding: 7% 5%;
+    }
+}

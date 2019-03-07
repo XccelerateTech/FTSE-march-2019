@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        
+        <title>Solution for day 4 using Bootstrap v4</title>
+
+        <!-- This is where we declare all of the external libraries our page uses -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/css/bootstrap.min.css" integrity="sha384-/Y6pD6FV/Vv2HJnA6t+vslU6fwYXjCFtcEpHbNJ0lyAFsXTsjBbfaDjzALeQsN6M" crossorigin="anonymous">
+            <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+        <link rel="stylesheet" href="animate.css">
+        <link rel="stylesheet" href="style.css">
+    </head>
+
+    <!-- Nav bar setup -->
+    <body data-spy="scroll" data-target=".navbar" data-offset="50">
+
+        <nav class="navbar navbar-expand-lg navbar-light fixed-top">
+            <a class="navbar-brand" href="#">THE ONLY BOOTSTRAP PAGE</a>
+
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02"
+                aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+    <!-- Nav bar items -->
+            <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="#about">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#four-icons">Four Icons</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#fourPic">Pictures</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#call-me">Call me</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!-- Can use Jumbotron -->
+        <section class="notebook-hero">
+            <h1>Hey Look, It's Every Bootstrap Website Ever</h1>
+            <p>Take a look around at the same wonderful bootstrap page you've seen ten million times before! Featuring all the same things as those pages!</p>
+            <a href="#call-me" class="btn btn-lg">This button makes the page scroll</a>
+        </section>
+        <!-- Second Section -->
+        <section class="about invert" id="about">
+            <h2>Want to make an original website yourself?</h2>
+            <p>Forget that! Who would ever want to put in all of that effort for a website? Just open up your web browser and type "bootstrap template" into your favorite search engine, like Yahoo! or Bing, and you're on your way! There are hundreds of templates to choose from, but go ahead and pick this same exact template from the first result on google, edit a few lines, and you're on your way! No one will notice!</p>
+            <a target="_blank" href="http://lmgtfy.com/?q=bootstrap+template" class="btn">Google that shit</a>
+        </section>
+        <!-- Four icons -->
+        <section class="four-icons" id="four-icons">
+            <h2>So wonderfully Creative</h2>
+            <div class="container">
+                <div class="row no-gutters">
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-globe fa-4x animated infinite bounce delay-2s"  aria-hidden="true"></i>
+                        <h4>This wonderful Template</h4>
+                        <p>Guaranteed to use the same wonderful template that every other bootstrap website uses, downloaded straight from The Web™</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-paper-plane fa-4x animated infinite hinge delay-2s" aria-hidden="true"></i>
+                        <h4>This wonderful Template</h4>
+                        <p>Guaranteed to use the same wonderful template that every other bootstrap website uses, downloaded straight from The Web™</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-thumbs-up fa-4x animated infinite rollIn delay-2s" aria-hidden="true"></i>
+                        <h4>This wonderful Template</h4>
+                        <p>Guaranteed to use the same wonderful template that every other bootstrap website uses, downloaded straight from The Web™</p>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <i class="fa fa-heart fa-4x animated infinite rollOut delay-2s"   aria-hidden="true"></i>
+                        <h4>This wonderful Template</h4>
+                        <p>Guaranteed to use the same wonderful template that every other bootstrap website uses, downloaded straight from The Web™</p>
+                    </div>
+
+                </div>
+            </div>
+        </section>
+        
+        <!-- Four pictures with overlay etc -->
+        <section class="fourPic invert" id="fourPic">
+            <div class="container-fluid">
+                <div class="row">
+                    <div class="col-lg-3 col-md-6">
+                        <img src="assets/img/1.jpg" class="img-fluid" alt="one thing look">
+                        <div class="hint">one thing <span class="word">look</span></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <img src="assets/img/2.jpg" class="img-fluid" alt="two thing at">
+                        <div class="hint">two thing <span class="word">at</span></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <img src="assets/img/3.jpg" class="img-fluid" alt="three thing this">
+                        <div class="hint">three thing <span class="word">this</span></div>
+                    </div>
+                    <div class="col-lg-3 col-md-6">
+                        <img src="assets/img/4.jpg" class="img-fluid" alt="four thing fourPic">
+                        <div class="hint">four thing <span class="word">fourPic</span></div>
+                    </div>
+                </div>
+            </div>
+            <h2>Seriously, It's This wonderful Template !</h2>
+            <a href="#about" class="btn btn-lg">That's amazing</a>
+        </section>
+        
+        <!-- contact me container -->
+        <footer class="call-me" id="call-me">
+            <h2>My Contact Information</h2>
+            <p>Here's my phone number and email address, because hey that's part of the template and why would you not include that on your webpage? You'd be a fool not to! I can't wait for all the job offers to come pouring in from all the companies wanting my insane website design skills.</p>
+            <p>Honestly this template does look really nice, though.</p>
+
+            <div class="container-fluid contacts">
+                <div class="row align-items-center">
+                    <div class="col-md-3 ml-md-auto">
+                        <i class="fa fa-phone fa-3x animated infinite lightSpeedIn delay-2s" aria-hidden="true"></i>
+                        <p>+1-666-420-6969</p>
+                    </div>
+                    <div class="col-md-3 mr-md-auto">
+                        <i class="fa fa-envelope-o fa-3x animated infinite lightSpeedIn delay-2s" aria-hidden="true"></i>
+                        <p><a href="mailto:holy@stuff.com">holy@stuff.com</a></p>
+                    </div>
+                </div>
+            </div>
+        </footer>
+
+        <!-- All scripts we need jquery, bootstrap, smooth scroll, local script -->
+        
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta/js/bootstrap.min.js" integrity="sha384-h0AbiXch4ZDo7tp9hKZ4TsHbi047NrKGLO3SEJAg45jXxnGIfYzk4Si90RDIqNm1" crossorigin="anonymous"></script>
+        <script src="smooth-scroll.min.js"></script>
+        <script src="script.js"></script>
+
+    </body>
+</html>
