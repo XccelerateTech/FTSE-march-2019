@@ -1,0 +1,26 @@
+.canvas{
+    border:2px rgb(41, 1, 78) solid;
+    position:absolute;
+    top:0px;
+    bottom:0px;
+    left:0px;
+    right:0px
+}
+
+#canvas-draft{
+    background-color: transparent;
+    z-index: 5;
+}
+
+.container-fluid{
+    width: 1280px
+}
+
+h1 {
+    z-index: -5;
+}
+
+#buttons {
+    position: fixed;
+    margin-top:720px;
+}
