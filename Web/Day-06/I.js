@@ -116,3 +116,9 @@ function occurrence(initialCards, uniqueNumber) {
     }
     return count;
 }
+
+var cards = pickCard(DECKS, 3)
+console.log(cards)
+console.log(calculateOdds(cards))
+
+console.log(unique(cards));
