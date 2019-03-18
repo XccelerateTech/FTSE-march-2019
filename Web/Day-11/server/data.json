@@ -1,0 +1,20 @@
+[
+{
+    "name": "Mark Zuckerberg",
+    "occupation": "CEO",
+    "married": true,
+    "children": [
+        {
+            "name": "Maxima"
+        }
+    ],
+    "grandchildren": ["Tim"]
+},
+
+{
+    "name": "Donald Duck",
+    "occupation": "none",
+    "pets": "Goofy"
+}
+
+]
