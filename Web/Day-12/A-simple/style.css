@@ -1,0 +1,38 @@
+.container {
+    width: 60vw;
+    height: 80vh;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.field {
+    width: 30%;
+    height: 33.3%;
+    border: 1px solid #000000;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+}
+
+.cross {
+    background-image: url('./images/cross.png');
+
+}
+
+.circle {
+    background-image: url('./images/circle.png');
+}
+
+@media screen and (min-width: 320px) and (max-width: 620px) {
+    .container {
+        width: 100%;
+    }
+    .field {
+        min-width: 100px;
+        max-width: 33%;
+        min-height: 100px;
+        max-height: 33%;
+    }
+}
+

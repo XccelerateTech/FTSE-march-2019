@@ -1,0 +1,58 @@
+td{
+    border: solid;
+    width: 100px;
+    height: 100px;
+    text-align: center;
+}
+
+i{
+    font-size: 80px;
+}
+
+i.far.fa-circle, h3{
+    color: #004C99;
+}
+
+i.fas.fa-times{
+    color: #a52a2a;
+}
+
+h1, h2, h3, form, small {
+    text-align: center;
+}
+
+form, .btn {
+    margin:10px;
+}
+
+div.flx {
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    flex-flow: row wrap;
+}
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 24px;
+        margin-top: 10px;
+    }
+
+    form, .btn {
+        margin:3px;
+    }
+
+    h2, h3 {
+        font-size: 16px;
+    }
+
+    td {
+        width: 25vw;
+        height: 25vw;
+    }
+
+    .btn {
+        padding: 2px;
+        font-size: 18px;
+    }
+}

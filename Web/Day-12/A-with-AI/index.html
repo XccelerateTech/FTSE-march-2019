@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Tic Tac Toe Xccelerate</title>
+
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="./main.css">
+</head>
+<body>
+    <h1>Are you bored? Play some Tic Tac Toe!</h1>
+
+    <div class="flx">
+        <button class="modePVP btn border">
+            Player vs Player
+        </button>
+        <button class="modePVSAI btn border">
+            Player vs Stupid AI
+        </button>
+        <button class="modePVMAI btn border">
+            Player vs Medium AI
+        </button>
+        <button class="modePVEAI btn border">
+            Player vs God AI
+        </button>
+    </div>
+    
+    <h2 class="modeState"></h2>
+
+    <div class="flx tb">
+        
+        <table class="ttt">
+            <tbody>
+                <tr>
+                    <td id="0">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="1">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="2">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="3">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="4">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="5">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+                <tr>
+                    <td id="6">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="7">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                    <td id="8">
+                        <i class="far fa-circle"></i>
+                        <i class="fas fa-times"></i>
+                    </td>
+                </tr>
+            </tbody>
+        </table>    
+    </div>
+
+    <form>
+        <input class="btn border" type="submit" value="New game">
+    </form>
+    
+    <h2>Note:</h2>
+    <h3>Please choose your playing mode first.</h3>
+
+    <div class="flx">
+        <small>Xccelerate @ 2019</small>
+    </div>
+
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="./A.js"></script>
+</body>
+</html>
