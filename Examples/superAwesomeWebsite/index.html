@@ -112,7 +112,7 @@
 
     <section id="superSection">
         <div class="placeholder center">
-            <p>Wow what a fantastic layout</p>
+            <p onclick='enlarger()' id='clickable'>Wow what a fantastic layout</p>
         </div>
     </section>
 
@@ -139,7 +139,6 @@
     <script>
 
         // initialise smooth scroll (it needs jquery to work)
-        var scroll = new SmoothScroll('a[href*="#"]');
 
         (function ($) {
 
@@ -171,6 +170,14 @@
 
         })(jQuery);
 
+    </script>
+    
+    <script type='text/javascript'>
+        var enlarger=()=>{
+            alert('You clicked me')
+            console.log(event.target)
+            event.target.style.fontSize = '100px';
+        }
     </script>
 
 </body>
