@@ -14,10 +14,17 @@ $('#form').on('submit', function(e) {
     callApi(new Date(), data, today => { //kind of call back hell (hard to read and hard to understand what closes where)
         callApi(oldDay,data,yesterday=>{ //the callback is today, yesterday and tomorrow here. 
             callApi(nextDay,data,tomorrow =>{
+                console.log(today);
+                console.log('yesterday ' , yesterday)
+
+                console.log('tomorrow ' , tomorrow)
+
 
                 var sunrisesTime = [new Date(today.sunrise),new Date(yesterday.sunrise),new Date(tomorrow.sunrise)]; //declare an array, sunrisesTime and store three dates, today.sunrise, yesterday.sunrise and tomorrow.sunrise
                 
-                var sunsetsTime = [new Date(today.sunset),new Date(yesterday.sunset), new Date(tomorrow.sunset)];//declare an array, sunsetTime and store three dates, today.sunset, yesterday.sunset and tomorrow.sunset
+                var sunsetsTime = [new Date(today.sunset),new Date(yesterday.sunset), new Date(tomorrow.sunset)];//declare an array, sunsetTime and store three dates, today.sunset, yesterday.sunset and tomorrow.sunset\
+                
+                console.log(sunrisesTime)
 
 
                 var now = new Date(); //declare a variable now, store inside a new Date() - gets the time from right now
@@ -102,17 +109,16 @@ function callApi(date, latLng ,cb) {
         // call api, manually define date so that any date can be called
         url:  `https://api.sunrise-sunset.org/json?${latLng}&date=${date.getFullYear()}-${date.getMonth()+1}-${date.getDate()}&formatted=0`, //add in the lat&lng to the query string and then add in the dates (full date)
         dataType: "json", //define datatype not entirely needed.
+
+//https://api.sunrise-sunset.org/json?lat=36.7201600&lng=-4.4203400&formatted=0
+
     }).done(function(data){
-        cb(data.results); //make the returned information usable outside of the function.   
+        cb(data.results); //make the returned information usable outside of the function.   console.log(data.results)
+        
     }).fail(function(err) {
         console.log('error', err);
     });
 }
-
-
-
-
-
 
 function toHHMMSS(milliseconds){ //change the time from time in seconds to date in the correct format
     var seconds = milliseconds / 1000;

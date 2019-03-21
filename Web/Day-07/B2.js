@@ -42,7 +42,7 @@ while (jim.health > 0 && thor.health > 0){ //start the fight
     } else {
       lastAttacker = aggressor;
       attackInARow = 1;
-    }
+    };
 
    
 }
@@ -105,37 +105,38 @@ let player2 = new Player({name: 'Thor', health: 100});
 
 //final method for the actual fight - making the fight a function 
 
-function fightToTheDeath(player, player1){
+function fightToTheDeath (player, player1) {
 let lastAttacker = null; 
 let attackInARow = 0;
-var aggressor, defender;
+var aggressor;
+var defender;
 
-while (player.health > 0 && player1.health > 0){ //start the fight
+while (player.health > 0 && player1.health > 0 ) { //start the fight
     
-  if(Math.floor(Math.random()*2) === 0){
+  if(Math.floor ( Math.random () * 2 ) === 0 ) {
       aggressor = player;
       defender = player1;
-
     } else {
       aggressor = player1;
       defender = player;
-    }
+    };
 
     aggressor.attack(defender);
     
-    if(aggressor === lastAttacker){
+    if(aggressor === lastAttacker ) {
       attackInARow ++;
-      if(attackInARow % 3 === 0){
+      if(attackInARow % 3 === 0 ) {
         aggressor.heal();
-      }
+      };
     } else {
       lastAttacker = aggressor;
       attackInARow = 1;
-      console.log(lastAttacker)
-    }
+      console.log(lastAttacker);
+    };
    
-} console.log('Someone has died, but who?')
+}; 
+console.log ('Someone has died, but who?');
   
-}
+};
 
-fightToTheDeath(jim, thor)
+fightToTheDeath (jim, thor);
