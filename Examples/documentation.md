@@ -33,6 +33,21 @@ If you've buttons and they link to new pages then you should use an arrow to sho
 
 For Canvas, you will have a basic representation of the index.html, in your wireFrame, specify which buttons will do what and how your page will be styled. 
 
+## Powerpoint Presentations
+Throughout this course you will be working in groups to create projects that you will present to the class. During these presentations you will need to address a couple of key things,
+
+    Why you built this project - does it solve real world problems
+
+    The project outlook and appearance - shown through the wireframe (a screen cap or two will suffice)
+
+    When you build an application that has its own database you will need to detail how the database is structured and how it works in your application - database design. 
+
+    How will this project make money - this is a question that you as a group should be able to answer. You could claim ad-space as your application becomes popular - or if your site is an ecommerce one then perhaps you're taking a percent from peoples purchases. 
+
+    What technology did you use to build the application - the stack you used for your frontend and backend..
+    For the canvas application, bootstrap, jquery, fontawesome hammerJS ETC. 
+
+
 ## Readme.md
 In a Readme.md one would usually detail, how to get the application to work:
 
