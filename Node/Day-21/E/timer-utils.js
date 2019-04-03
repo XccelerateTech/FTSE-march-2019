@@ -1,4 +1,5 @@
-module.exports = 
+module.exports =
+ 
 {
     start: function(timer, seconds){
         timer.emit('start', seconds);

@@ -13,6 +13,7 @@ class Referee extends EventEmitter {
 
         this.on('computerReady', (computerInput) => {
             this.computerInput = computerInput;
+            console.log(computerInput)
             this.emit('resultReady', this.judge());
         });
     }
@@ -50,8 +51,8 @@ const player = new Player(referee);
 const computer = new Computer(referee);
 
 referee.on('firstPlayerTurn', function (){
-    player.play('scissors');
-    console.log(`Player plays scissors`)
+    player.play('rock');
+    console.log(`Player plays rock`)
 });
 
 referee.on('otherPlayerTurn', function (){

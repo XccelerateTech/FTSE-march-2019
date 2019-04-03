@@ -1,0 +1,22 @@
+{
+  "name": "project-music",
+  "version": "1.0.0",
+  "description": "NPM test",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "npm"
+  ],
+  "author": "Sam",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.18.0",
+    "express": "^4.16.4",
+    "jasmine": "^3.2.0",
+    "jest": "^24.6.0",
+    "lodash": "^4.17.11",
+    "passport": "^0.4.0"
+  }
+}

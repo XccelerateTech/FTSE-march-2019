@@ -1,0 +1,22 @@
+{
+  "name": "post-man",
+  "version": "1.0.0",
+  "description": "testing express and postman",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "postman",
+    "express"
+  ],
+  "author": "Sam",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.4"
+  },
+  "devDependencies": {
+    "jasmine": "^3.3.0"
+  }
+}

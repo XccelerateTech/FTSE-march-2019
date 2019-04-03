@@ -56,7 +56,7 @@ http.createServer(function (req, res) {
 */
 
 // this code will render the whole flower shop
-/*
+
 var path = require('path');
 
 http.createServer(function(req,res){
@@ -69,4 +69,3 @@ http.createServer(function(req,res){
 }).listen(8080, '127.0.0.1')
 
 
-*/

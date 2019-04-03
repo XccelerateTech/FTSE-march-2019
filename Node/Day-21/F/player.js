@@ -11,3 +11,7 @@ class Player extends EventEmitter{
 }
 
 module.exports = Player;
+
+for (let i = 0;  i < something.length; i ++){
+    console.log(array[i])
+}
