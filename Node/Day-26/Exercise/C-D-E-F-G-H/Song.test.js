@@ -51,7 +51,7 @@ describe('You should be able to check if the songs are in the same album or not'
 
 beforeEach(()=>{
     expect.extend({
-    toBeInTheSameAlbumAs(song1){
+    toBeInTheSameAlbumAs(song, song1){
       const pass = ( song.album === song1.album)
       if(pass){
         return {
@@ -75,7 +75,7 @@ beforeEach(()=>{
         expect(song3).toBeInTheSameAlbumAs(song3, song4);
     });
 
-    test('It should return true if both songs are in the same album', ()=>{
+    test('It should return a fail if both songs are not the same album', ()=>{
       // this should fail 
       expect(song1).toBeInTheSameAlbumAs(song2, song1);
   });
