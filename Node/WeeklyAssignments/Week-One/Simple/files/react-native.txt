@@ -1,0 +1,178 @@
+-----create new react-native project--------
+
+ react-native init [Project_Name]
+
+ cd [Project_Name]
+
+ react-native run-ios
+ react-native run-android
+
+-----------------------------make it run yay-----------------------------
+use this code in powershell administrator.
+
+
+mkdir android\app\src\main\assets
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res
+
+react-native run-android
+
+into package.json (each app) in scripts...
+"android-linux": "react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res && react-native run-android"
+ 
+ in ubuntu run 
+ yarn android-linux
+ then open in powershell
+
+ react-native run-android
+
+ reload powershell each time.
+
+
+---------------------add typescript-------------------
+
+https://github.com/Microsoft/TypeScript-React-Native-Starter
+
+  yarn add --dev typescript
+  yarn add --dev react-native-typescript-transformer
+  yarn tsc --init --pretty --jsx react
+  touch rn-cli.config.js
+  yarn add --dev @types/react @types/react-native
+
+open tsconfig.json and uncomment: 
+// "allowSyntheticDefaultImports": true, 
+
+add this line (line 6)
+// "lib": ["es6","dom"],
+
+
+open up rn-cli.config.js and add:
+
+-----start-------
+
+module.exports = {
+  getTransformModulePath() {
+    return require.resolve("react-native-typescript-transformer");
+  },
+  getSourceExts() {
+    return ["ts", "tsx"];
+  }
+};
+
+-----end-------
+
+Rename the generated App.js and __tests__/App.js files to App.tsx. index.js needs to use the .js extension. All new files should use the .tsx extension (or .ts if the file doesn't contain any JSX).
+
+If you try to run the app now, you'll get an error like object prototype may only be an object or null. This is caused by a failure to import the default export from React as well as a named export on the same line. Open App.tsx and modify the import at the top of the file:
+
+-import React, { Component } from 'react';
++import React from 'react'
++import { Component } from 'react';
+Some of this has to do with differences in how Babel and TypeScript interoperate with CommonJS modules. In the future, the two will stabilize on the same behavior.
+
+At this point, you should be able to run the React Native app.
+
+
+
+---------------------React Native Navigation (android)-------------
+
+
+yarn add react-native-navigation@latest
+
+
+1. follow the official documentation.
+
+https://wix.github.io/react-native-navigation/#/installation-android
+
+
+2. Open android/app/gradle/wrapper/gradle-wrapper.properties
+
+Change the last line to
+distributionUrl=https\://services.gradle.org/distributions/gradle-4.7-all.zip
+
+3. Open android/build.gradle
+
+Make the following changes:
+
+buildscript {
+  // some other stuff ...
+  dependencies {
+    classpath 'com.android.tools.build:gradle:3.0.1'
+    // some other stuff ...
+  }
+}
+
+ext {
+    buildToolsVersion = "26.0.3"
+    minSdkVersion = 16
+    compileSdkVersion = 26
+    targetSdkVersion = 26
+    supportLibVersion = "26.0.3"
+}
+
+
+3. Open android/app/build.gradle
+
+Change the following line:
+
+android {
+    compileSdkVersion 26
+    buildToolsVersion "26.0.3"
+    // some other stuff ...
+}
+
+4. Follow the official guild on Usage
+
+https://wix.github.io/react-native-navigation/#/usage
+
+
+
+
+
+---------------------React Native OneSignal (android)-------------
+
+
+yarn add react-native-onesignal
+
+react-native link
+
+
+
+
+//------App.js--------
+
+
+import OneSignal from 'react-native-onesignal';
+
+
+  componentWillMount() {
+    // OneSignal.init([ONESIGNAL APP ID]);
+    OneSignal.init("fea3e67f-d5bf-48db-a8b3-1fce83556408");
+  }
+
+
+------------------------- Gradlew Commands run in powershel---------------------------------
+*clean project
+./gradlew clean  
+
+*build project
+./gradlew build
+
+*build for debug package
+./gradlew assembleDebug or ./gradlew aD
+
+*build for release package
+./gradlew assembleRelease or ./gradlew aR
+
+*build for release package and install
+./gradlew installRelease or ./gradlew iR Release
+
+*build for debug package and install
+./gradlew installDebug or ./gradlew iD Debug
+
+*uninstall release package
+./gradlew uninstallRelease or ./gradlew uR
+
+*uninstall debug package
+./gradlew uninstallDebug or ./gradlew uD 
+
+*all the above command + "--info" or "--debug" can get more detail information.
