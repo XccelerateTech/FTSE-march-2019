@@ -1,0 +1,24 @@
+Install knex globally
+
+in the terminal or ubuntu - 
+
+npm install -g knex
+
+
+in your exercise directory, make a new folder
+
+npm init -y
+npm install knex pg
+npm install dotenv
+
+knex init
+
+this will make your knexfile.js
+
+Now open your postgres server and one instance in terminal (any database)
+
+touch .env - in ubuntu or terminal 
+
+
+
+
