@@ -7,6 +7,8 @@ exports.up = function(knex, Promise) {
         table.foreign('creditCardNumber').references('credit_cards.number');
         table.integer('account_id').unsigned();
         table.foreign('account_id').references('accounts.id');
+        table.integer('card_id').unsigned();
+        table.foreign('card_id').references('credit_cards.id');
 
         table.timestamps(false,true);
     })
