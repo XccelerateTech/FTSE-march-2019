@@ -31,7 +31,6 @@ io.on('connection', (socket)=>{
 
     //handle the chat event emitted from the front end
     socket.on('chat', function(data){   
-        console.log(data)
         io.to(chatroom).emit('chat', data)  
     });
     //handle the isTyping event emitted from the front end
