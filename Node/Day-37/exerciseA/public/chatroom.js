@@ -1,61 +1,67 @@
+$(()=>{
+
+    alert('Join a room, input your user/ ID and you can start typing.')
+    let socket = io.connect('http://localhost:8080');
 //connect to socket.io
 
-let socket = io.connect('http://localhost:8080');
-
 //set up our variables from the DOM (select the page elements we commonly use)
-//code without jQuery selection
-let message = document.querySelector("#message");
-let btn = document.querySelector("#send");
-let handle = document.querySelector("#handle");
-let output = document.querySelector("#output");
-let echo = document.querySelector("#echo");
-let chatwindow = document.querySelector("#chat-window");
-let joinRoom = document.querySelector("#join")
+let message = $('#message');
+let btn = $('#send')
+let handle = $('#handle')
+let output = $('#output')
+let echo = $('#echo')
+let joinRoom = $('#join')
+let chatwindow = $('#chat-window')
 
 //submit events to io 
 
 //submit a chat message - press send button
-btn.addEventListener('click', ()=>{
+btn.on('click', ()=>{
     socket.emit('chat',{
-        message:message.value,
-        handle:handle.value
+        message: message.val(),
+        handle: handle.val()
     })
-    message.value =''
-});
+    message.val('');
+})
 
-//submit a chat message - press enter
-message.addEventListener('keypress', (event)=>{
+message.keypress((event)=>{
     if (event.keyCode == 13){
+        console.log('enter pressed')
         socket.emit('chat',{
-            message:message.value,
-            handle:handle.value
+            message: message.val(),
+            handle: handle.val()
         })
-        message.value =''
+        message.val('');
     }
-});
+})
 
 // if someone is typing emit the isTyping event
-message.addEventListener('keypress', ()=>{
+
+message.keypress((event)=>{
     if (event.keyCode !== 13){
-        socket.emit('isTyping', handle.value)
+        socket.emit('isTyping', handle.val())
     }
-});
+})
 
 //listen events from io
 socket.on('chat', (data)=>{
-    echo.innerHTML ='<p> &nbsp</p>'
-    output.innerHTML +='<p><strong>' + data.handle+ ': </strong>' + data.message + '</p>'
+    echo.html('<p> &nbsp</p>')
+    output.append($('<p>').text( `${data.handle}: ${data.message}`));
     chatwindow.scrollTop = chatwindow.scrollHeight
 });
 
 socket.on('isTyping', (data)=>{
-    console.log('hello')
-    echo.innerHTML = '<p><em>'+ data +' is typing a message... </em></p>'
+    echo.html('<p><em>'+ data +' is typing a message... </em></p>');
 });
 
 // join a room
 
-joinRoom.addEventListener('click', ()=>{
+joinRoom.on('click', ()=>{
     let room = prompt('Which room do you want to join?')
     socket.emit('subscribe', room)
 });
+
+})
+
+//Method two, get username in a prompt
+// var name = prompt('what is your name'), pass this variable with the chat messages (in an object) - replace handle.val()
