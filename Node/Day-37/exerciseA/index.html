@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,24 +8,30 @@
     <link rel="stylesheet" href="style.css">
     <title>Sams Chat</title>
 </head>
+
 <body>
     <div id="chatty">
-            <button id='join'>Join a room</button>
+        <button id='join'>Join a room</button>
 
         <div id="chat-window">
             <div id="output"></div>
         </div>
 
-        <div id="echo"><p> &nbsp</p></div>
+        <div id="echo">
+            <p> &nbsp</p>
+        </div>
         <input type="text" id="handle" placeholder="ID">
         <input type="text" id="message" placeholder="Message">
         <button id="send">Send</button>
     </div>
 
     Xccelerate 2019
-    
-    
+
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.1/socket.io.dev.js"></script>
-        <script src = "/chatroom.js"></script>
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"
+        integrity="sha256-BJeo0qm959uMBGb65z40ejJYGSgR7REI4+CW1fNKwOg=" crossorigin="anonymous"></script>
+    <script src="/chatroom.js"></script>
 </body>
+
 </html>
