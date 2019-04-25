@@ -6,7 +6,11 @@ const expressSession = require('express-session')
 const pg = require('pg');
 const passport = require('passport');
 const LocalStrategy = require('passport-local').Strategy;
+const FacebookStrategy = require('passport-facebook').Strategy;
 require('dotenv').config();
+
+const fs = require('fs');
+const https = require('https');
 
 const app = express();
 
@@ -53,6 +57,29 @@ passport.use('local-login', new LocalStrategy(
     }
 ));
 
+passport.use('facebook-strategy', new FacebookStrategy({
+    clientID: process.env.APP_ID,
+    clientSecret: process.env.APP_SECRET,
+    callbackURL: '/auth/facebook/callback'
+}, async (accessToken, refreshToken, profile, done)=>{
+    console.log(profile)
+
+    let userResult = await knex('users').where({ facebookID: profile.id});
+    if(userResult == 0 ){
+        let user = {
+            facebookID: profile.id,
+            email: profile.displayName,
+            accessToken: accessToken
+        }
+        let query = await knex('users').insert(user).returning('id');
+        user.id = query[0];
+        done(null, user);
+    } else {
+        done(null, userResult[0])
+    }
+}
+));
+
 passport.serializeUser((user, done)=>{
     done(null, user.id);
 });
@@ -91,6 +118,21 @@ app.get('/error', (req, res)=>{
     res.send('You have failed....')
 });
 
+// similar to our post method above. 
+app.get('/auth/facebook/callback', passport.authenticate('facebook-strategy',{
+    failureRedirect: '/error'
+}), (req, res)=> res.redirect('/'));
+
+//initial facebook request 
+app.get('/auth/facebook', passport.authenticate('facebook-strategy', {
+    scope: ['user_friends', 'manage_pages']
+}));
 
 
-app.listen(8080);
+const options = {
+    cert: fs.readFileSync('./localhost.crt'),
+    key: fs.readFileSync('./localhost.key')
+};
+
+https.createServer(options, app).listen(8080)
+
