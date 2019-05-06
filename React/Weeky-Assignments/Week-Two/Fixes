@@ -1,0 +1,4 @@
+Fix the tag rendering - get the tags to go into the database
+When searching or displaying links, also retrieve the tags from the other table
+Comment where needed
+Clean up the UI 
