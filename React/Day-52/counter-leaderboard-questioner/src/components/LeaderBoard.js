@@ -7,21 +7,44 @@ class LeaderBoard extends React.Component {
     constructor(props) {
         super(props)
         this.state = {
-            counters: [{ name: RandomName({ seed: Math.random() }), count: 0 }, { name: RandomName(), count: 2 }],
+            counters: [
+                { name: RandomName({ seed: Math.random() }), count: 0 },
+                { name: RandomName(), count: 2 }
+            ],
         }
 
     }
 
+
+            // Exercise - 2
+
     addCounter = () => {
+        let newCounterArray = this.state.counters.concat([{ name: RandomName({ seed: Math.random() }), count: 0 }])
+
+        // newCounterArray.push({ name: RandomName({ seed: Math.random() }), count: 0 })
         this.setState({
-            counters: this.state.counters.concat([{ name: RandomName({ seed: Math.random() }), count: 0 }])
+            counters: newCounterArray
         })
     }
 
+            // Exercise - 3
+
     removeCounter = (i) => {
+        console.log(i)
+        {/*
+You can use the filter method instead of splice:
+            let newArray = [...this.state.counters]
+            newArray = newArray.filter((item, index) => index !== i)
+            this.setState({
+                counters: newArray
+            })
+        */}
+        let newObj = [...this.state.counters]
+        newObj.splice(i, 1)
         this.setState({
-            counters: this.state.counters,
+            counters: newObj
         })
+   
 
     }
 
@@ -30,13 +53,12 @@ class LeaderBoard extends React.Component {
             onClick={() => this.handleClickPlus(i)}
             onMouseDown={() => this.handleClickMinus(i)}
             onButtonPress={() => this.removeCounter(i)} />
-        );
+        );  
 
     }
 
     handleClickPlus(i) {
         let newObj = { ... this.state.counters[i], count: this.state.counters[i].count + 1 }
-
         let newArray = [... this.state.counters];
         newArray[i] = newObj
         this.setState({
