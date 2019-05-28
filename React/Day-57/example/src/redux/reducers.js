@@ -1,4 +1,4 @@
-import { ADD_LINK, CLEAR_LINKS, SPACE_MAN, DELETE_LINK, LOAD_LINK_SUCCESS, LOAD_LINK_FAILURE } from './actions'
+import { ADD_LINK, CLEAR_LINKS, SPACE_MAN, DELETE_LINK, ADD_SPACEMAN } from './actions'
 
 const initialState = {
     links: [
@@ -22,15 +22,15 @@ const initialState = {
         { firstName: "Jane", lastName: "Doe", age: 32, occupation: "Developer of Software" },
         { firstName: "Amanda", lastName: "Keith", age: 44, occupation: "Dancer" },
         { firstName: "Sally", lastName: "Herman", age: 21, occupation: "Artist" },
-  
-      ],
+
+    ],
     spacePeople: []
 }
 
 
 // we need to pass the intial state and the update so that redux knows what to update, and redux will always return a complete state
-export function rootReducer ( state = initialState, action ){
-    switch(action.type){
+export function rootReducer(state = initialState, action) {
+    switch (action.type) {
         case ADD_LINK:
             return {
                 ...state,
@@ -41,32 +41,26 @@ export function rootReducer ( state = initialState, action ){
                 ...state,
                 links: []
             };
-        case SPACE_MAN: 
+        case SPACE_MAN:
             return {
                 ...state,
                 spacePeople: state.spacePeople.concat([action.spaceArray])
             };
+        //Exercise A - Day 57
 
-            //Exercise B
+        case ADD_SPACEMAN:
+            return {
+                ...state,
+                spacePeople: state.spacePeople.concat([action.spaceMan])
+            }
+
+        //Exercise B
         case DELETE_LINK:
-        return {
-            ...state,
-            links: state.links.filter( (link, index)=> index != action.index)
-        };
-
-        case LOAD_LINK_SUCCESS:
-        return {
-            ...state,
-            links: state.links.concat([...action.links])
-        }
-
-        case LOAD_LINK_FAILURE:
-        return {
-            ...state,
-            links: state.links
-            
-        }
+            return {
+                ...state,
+                links: state.links.filter((link, index) => index != action.index)
+            }
         default:
-        return state;
+            return state;
     }
 }

@@ -1,12 +1,12 @@
 import * as React from 'react';
 import { connect } from 'react-redux';
-import {addLink, clearLink, spaceMan, deleteLink} from './redux/actions'
+import {addLink, clearLink, spaceMan, deleteLink, loadLinkThunk} from './redux/actions'
+import axios from 'axios';
 
-import axios from 'axios'
 
 export class PureLinkList extends React.Component{
 
-    loadSpaceMen=()=>{
+      loadSpaceMen=()=>{
         axios.get('http://api.open-notify.org/astros.json').then((response) => {
             let people = []
             response.data.people.map(person => {
@@ -17,11 +17,21 @@ export class PureLinkList extends React.Component{
         })
     }
 
+    loadlinks2=()=>{
+        axios.get('https://www.reddit.com/r/programming.json').then((response) => {
+            
+            console.log(response)
+        })
+    }
+
     render(){
         return (
         <div>
             <button onClick={this.props.addLink} >New Link </button>
             <button onClick={this.props.clearLink} >Clear Link </button>
+            <button onClick={this.props.loadLinks} >Load Links </button>
+            <button onClick={this.loadlinks2} >Load Links 2 </button>
+
 
             <h2>Links: </h2>
             {this.props.links.map((l, i)=>(
@@ -32,26 +42,20 @@ export class PureLinkList extends React.Component{
                     <button onClick={()=>{this.props.deleteLink(i)}}>Delete Link</button>
                 </div>
             ))}
-            {/*
-            Exercise B
-            We wrap this.props.deleteLink inside a function so that we do not cause an infinite loop when the component is rendered 
-            This is for the deleteLink button above.
-            */}
 
-            <div>
-                <button onClick={this.loadSpaceMen}>Load SpacePeople </button>
+                <div>
+                    <button onClick={this.loadSpaceMen}>Load SpacePeople </button>
 
-                {this.props.spacePeople.map((p, i)=>(
-                    <div key={i}>
-                    {p }
+                    {this.props.spacePeople.map((p, i)=>(
+                        <div key={i}>
+                        <p>{p} </p>
+                        </div>
+                    ))}
                     </div>
-                ))}
-                </div>
                 
             </div>
     );
     }
-    
 };
 
 const mapStateToProps = state => {
@@ -69,6 +73,8 @@ const mapDispatchToProps = dispatch => {
         dispatch(clearLink()),
         loadSpace: (people)=>
         dispatch(spaceMan(people)),
+        loadLinks: ()=>
+        dispatch(loadLinkThunk()),
 
         //exercise B
         deleteLink: (i) =>
