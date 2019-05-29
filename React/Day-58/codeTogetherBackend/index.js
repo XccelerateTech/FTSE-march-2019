@@ -80,6 +80,15 @@ app.post("/api/login/facebook", function(req, res) {
     }
 });
 
+app.get('/api/information', (req,res)=>{
+    console.log('getting information')
+    const information = {
+        content: 'Well this is important information from the backend',
+        title: 'Backend Info'
+    }
+    res.json(information)
+})
+
 app.listen(8080, () => {
     console.log('App is listening to port 8080')
 })

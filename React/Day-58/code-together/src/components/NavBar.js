@@ -11,6 +11,7 @@ export default class NavBar extends React.Component {
                 <Link to='/aboutUs'>About Us</Link>
                 <Link to='/clock'>Clock Timer</Link>
                 <Link to='/currency'>Currency Converter</Link>
+                <Link to='/infoPage'>Info Page</Link>
 
             </div>
         )

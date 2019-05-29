@@ -12,6 +12,7 @@ import AboutUsPage from './screens/AboutUsPage';
 import ClockPage from './screens/ClockPage';
 import CurrencyPage from './screens/CurrencyPage';
 import Login from './screens/Login';
+import InfoPage from './screens/InfoPage';
 
 import Secret from './components/Secret';
 import NoMatch from './screens/NoMatch';
@@ -59,6 +60,8 @@ export default class LandingPage extends React.Component {
          <PrivateRoute  path='/clock' component={ClockPage} />
          <PrivateRoute  path='/currency' component={CurrencyPage} />
          <PrivateRoute  path='/secretPage' component={Secret} />
+         <PrivateRoute  path='/infoPage' component={InfoPage} />
+
          <Route path='/login' component={Login} />
 
 
