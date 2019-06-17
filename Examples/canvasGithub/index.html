@@ -13,14 +13,14 @@
 
 <body>
 
-    <section id="canvas-section">
-     <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas>
+     <section id="canvas-section">
+     <canvas id="canvas-real" class="canvas" width='1280px' height='720px'></canvas> 
     <canvas id="canvas-draft" class="canvas" width='1280px' height='720px'></canvas>   
     </section>
     
     <section class='container-fluid' id='buttons'>
         <h1>Select your drawing method</h1>
-        <div class='row'>
+        <!-- <div class='row'>
             <div class="col-4">                    
                 <p>Draw a Rectangle</p>
                 <button class='btn btn-primary' id='rectangle'>
@@ -40,8 +40,10 @@
                             <i class="fas fa-broom"title="Clear the page"></i>
                     </button>
                 </div>
-        </div>
+        </div> -->
     </section>
+
+    <!-- <canvas id="canvas" style="border: 1px solid" width="600" height="300"></canvas> -->
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
@@ -52,10 +54,13 @@
         crossorigin="anonymous"></script>
 
     <script type='text/javascript' src="./assets/javascript/canvas-common.js"></script>
-    <script type='text/javascript' src="./assets/javascript/drawing-line.js"></script>
+    <!-- <script type='text/javascript' src="./assets/javascript/drawing-line.js"></script> -->
     <script type='text/javascript' src="./assets/javascript/drawing-rectangle.js"></script>
-    <script type='text/javascript' src="./assets/javascript/canvas-clear.js"></script>
+    <!-- <script type='text/javascript' src="./assets/javascript/canvas-clear.js"></script> -->
     <script type='text/javascript' src="./assets/javascript/start.js"></script>
+
+    <!--The ball function clears either the draft of the real, so the animation is hard to ensure. Add another canvas?-->
+    <!-- <script type='text/javascript' src="./assets/javascript/ball.js"></script> -->
 </body>
 
 </html>
