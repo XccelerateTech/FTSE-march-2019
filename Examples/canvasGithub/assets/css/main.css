@@ -15,12 +15,3 @@
 .container-fluid{
     width: 1280px
 }
-
-h1 {
-    z-index: -5;
-}
-
-#buttons {
-    position: fixed;
-    margin-top:720px;
-}
