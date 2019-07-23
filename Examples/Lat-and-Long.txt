@@ -1,0 +1,27 @@
+Hong Kong
+Lat: 22.286
+Long: 114.149
+
+https://api.sunrise-sunset.org/json?lat=22.286&lng=114.149&formatted=0
+
+
+England 
+Lat: 52.355
+Long: 1.174
+
+https://api.sunrise-sunset.org/json?lat=52.355&lng=1.174&formatted=0
+
+
+France
+Lat: 46.228
+Long: 2.214
+
+https://api.sunrise-sunset.org/json?lat=46.228&lng=2.214&formatted=0
+
+
+Chile
+Lat: 35.675
+Long: 71.543
+
+https://api.sunrise-sunset.org/json?lat=35.675&lng=71.543&formatted=0
+

@@ -14,7 +14,6 @@ export default class LinkedList extends React.Component {
                         title={link.title}
                         url={link.url}
 
-                        // tags={link.tags}
                     />
                 ))}
             </div>

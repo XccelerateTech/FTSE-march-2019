@@ -59,7 +59,7 @@ You can use the filter method instead of splice:
 
     handleClickPlus(i) {
         let newObj = { ... this.state.counters[i], count: this.state.counters[i].count + 1 }
-        let newArray = [... this.state.counters];
+        let newArray = this.state.counters;
         newArray[i] = newObj
         this.setState({
             counters: newArray

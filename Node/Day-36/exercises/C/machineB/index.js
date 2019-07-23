@@ -26,13 +26,18 @@ function getJob(){
         }
 
         const job = JSON.parse(reply);
-        // console.log(job)
+        console.log(job)
+
+
 
         console.log('Processing job, msg: ' + job.msg + ' date: ' + job.date); setTimeout(function () {
             console.log('Job Done! Ready for a different job')
             scheduleGetJob();
+
+            
         }, 10000);
     });
+    
 }
 
 scheduleGetJob();

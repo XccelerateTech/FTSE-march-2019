@@ -8,6 +8,8 @@ class NoteService {
         this.init()
     }
 
+    // init promise only needs to run once, when it runs, this.read resolves with this.notes (the notes from before) as a globally available variable.
+    // the init promise is not concerned with resolving data - it just needs to run once to ensure persistence. 
     init(){
         if (this.initPromise === null){
             this.initPromise = new Promise ((resolve, reject)=> {
@@ -37,7 +39,7 @@ class NoteService {
                 } catch (e) {
                     return reject(e)
                 }
-                return resolve(this.notes);
+            return resolve(this.notes);
             });
         });
 
@@ -56,8 +58,8 @@ class NoteService {
 
     list(user){
         if(typeof user !== 'undefined'){
-            return this.init()
-                .then(()=> this.read())
+            return this.init() //just checks to see if it has run once. 
+                .then(()=> {return this.read()})
                 .then(()=>{
                     if(typeof this.notes[user] === 'undefined'){
                         return [];
@@ -66,17 +68,18 @@ class NoteService {
                     }
                 });
         } else {
-            return this.init().then(()=>{
+             return this.init().then(()=>{
                 return this.read();
             });
         }
     };
 
     add(note, user){
+
         return this.init().then(() => {
             if(typeof this.notes[user] === 'undefined'){
                 this.notes[user] = [];
-            }
+         }
             this.notes[user].push(note);
             return this.write();
         });
@@ -103,8 +106,10 @@ class NoteService {
             if(this.notes[user].length <= index){
                 throw new Error("Cannot remove a note that doesn't exist");
             }
+        return this.read().then(()=>{
             this.notes[user].splice(index, 1);
-            return this.write();
+            return this.write()
+        });
         });
     }
 }

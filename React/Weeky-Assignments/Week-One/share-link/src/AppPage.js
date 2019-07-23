@@ -23,7 +23,7 @@ class App extends React.Component{
     const lowerSearch = this.state.search.toLowerCase();
 
 
-    const linksFiltered = this.state.links.filter(link => link.name.toLowerCase().indexOf(lowerSearch) > -1 || link.url.toLowerCase().indexOf(lowerSearch) > -1 )
+    const linksFiltered = this.state.links.filter(link => link.name.toLowerCase().indexOf(lowerSearch) > -1 || link.url.toLowerCase().indexOf(lowerSearch) > -1 || (link.tags.map((tag)=>tag.name.toLowerCase().indexOf(lowerSearch) > -1)))
 
     return (
       <div className="container-fluid">

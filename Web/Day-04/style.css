@@ -156,7 +156,7 @@ a {
 }
 
 .about p {
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff99;
 }
 
 .about .btn {
@@ -180,7 +180,7 @@ a {
 }
 
 .four-icons p {
-    color: rgba(0, 0, 0, 0.6);
+    color: #00000099;
 }
 
 /* fourPic */
@@ -191,7 +191,7 @@ a {
 }
 
 .fourPic p {
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff99;
 }
 
 .fourPic .container-fluid, .fourPic .row > div {
@@ -206,7 +206,7 @@ a {
 .fourPic .hint {
     opacity: 0;
     transition: opacity 0.5s;   
-    background: rgba(240,95,64,.9);
+    background: #f05f40e6;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -217,7 +217,7 @@ a {
     justify-content: center;
     align-items: center;
     text-transform: uppercase;
-    color: rgba(255, 255, 255, 0.6);
+    color: #ffffff99;
 }
 
 .fourPic .hint:hover {
@@ -247,7 +247,7 @@ a {
 
 .call-me p {
     padding: 0 20% 1rem;
-    color: rgba(0, 0, 0, 0.6);
+    color: #00000099;
 }
 
 .call-me .contacts {

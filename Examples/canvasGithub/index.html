@@ -17,6 +17,8 @@
      <canvas id="canvas-real" class="canvas" width='1000px' height='620px'></canvas> 
     <canvas id="canvas-draft" class="canvas" width='1000px' height='620px'></canvas>   
     </section>
+
+    <div id="button">button</div>
     
 
     <script type='text/javascript' src="https://code.jquery.com/jquery-3.2.1.js"></script>
@@ -29,7 +31,16 @@
 
     <script type='text/javascript' src="./assets/javascript/canvas-common.js"></script>
     <script type='text/javascript' src="./assets/javascript/drawing-rectangle.js"></script>
+    <script type='text/javascript' src="./assets/javascript/drawing-line.js"></script>
+
     <script type='text/javascript' src="./assets/javascript/start.js"></script>
+
+    <script>
+    $('#button').on('click', function(){
+        alert('Super')
+        currentFunction = new DrawingLine(contextReal, contextDraft);
+        })
+    </script>
     
     <!--The ball function clears either the draft of the real, so the animation is hard to ensure. Add another canvas?-->
     <!-- <script type='text/javascript' src="./assets/javascript/ball.js"></script> -->

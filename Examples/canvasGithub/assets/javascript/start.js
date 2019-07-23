@@ -1,5 +1,7 @@
  // Switch based on User input, for example like clickong a button or something else. We will talk about this part in the section after this one. 
         // currentFunction = new DrawingLine(contextReal,contextDraft);
+
+        
         currentFunction = new DrawingRectangle(contextReal, contextDraft);
 
         // $('#line').click(()=>{

@@ -35,7 +35,7 @@ $(function(){
             checkWin(cross, 'cross');
         } else {
             field.addClass('circle');
-            cross.push(parseInt(id));
+            circle.push(parseInt(id));
             checkWin(circle, 'circle');
         }
         clicks ++;

@@ -16,7 +16,9 @@ class LinkRouter {
 
     get(req, res){
         return this.linkService.list(req.query.search)
-            .then((links)=> res.json(links))
+            .then((links)=> {
+                console.log(links)
+                res.json(links)})
             .catch((err)=> res.status(500).json(err));
     }
 

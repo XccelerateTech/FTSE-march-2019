@@ -1,0 +1,238 @@
+Remember to LINK the packages you've installing
+In the PPT go through the concept of linking
+
+Installation:
+
+Follow the guide online, however when installing 
+
+
+
+When creating your virtual phone (emulator) when you need to choose the Android API do not choose 28 Pie, use 27 oreo which has x86 ABI Target Android 8.1(Google Play) 
+
+
+
+
+Day 62
+
+FlatList - Read blogpost 
+
+SafeAreaView
+The purpose of SafeAreaView is to render content within the safe area boundaries of a device. It is currently only applicable to iOS devices with iOS version 11 or later.
+
+SafeAreaView renders nested content and automatically applies paddings to reflect the portion of the view that is not covered by navigation bars, tab bars, toolbars, and other ancestor views. Moreover, and most importantly, Safe Area's paddings reflect the physical limitation of the screen, such as rounded corners or camera notches (i.e. the sensor housing area on iPhone X).
+
+Usage Example
+Simply wrap your top level view with a SafeAreaView with a flex: 1 style applied to it. You may also want to use a background color that matches your application's design.
+
+<SafeAreaView style={{flex: 1, backgroundColor: '#fff'}}>
+  <View style={{flex: 1}}>
+    <Text>Hello World!</Text>
+  </View>
+</SafeAreaView>
+
+renderSeparators are part of flatlist - makes your seperators easier to style and control 
+
+SearchFilterFunction = the search bar on the page which is used to filter out information not matching the Text
+
+Activity indicator is a seperate component from React-Native
+
+install react-native-elements/ react-native-vector-icons  for the flatlist component -- for both searchbar and ListItem
+
+CLOSE METRO BUNDLER BETWEEN APPS!
+
+
+Extra Components
+Images
+Animations
+Timers
+
+Day63
+
+Geolocation - goto phone details on emulator - the long and lat reflects what values stated inside the simulator/ emulator 
+
+
+Day 64
+
+OneSignal - componentWillMount () - appID = follow the guides
+one signal demo push is from thier website which should be the dash board on this days page. 
+
+
+Camera setting is in the advnaced setting for the emulator, use the webcam camera - not the emulated phone 
+
+
+SD card needs to be 1024
+
+
+Errors
+================================================
+
+Day 62 - Ex2FlatList
+
+You MUST run these commands to use the FlatList component. 
+yarn add react-native-elements
+yarn add react-native-vector-icons
+react-native link react-native-vector-icons
+
+
+
+ Module `react-native-vector-icons/FontAwesome` does not exist in the Haste module map
+
+This might be related to https://github.com/facebook/react-native/issues/4968
+To resolve try the following:
+  1. Clear watchman watches: `watchman watch-del-all`.
+  2. Delete the `node_modules` folder: `rm -rf node_modules && npm install`.
+  3. Reset Metro Bundler cache: `rm -rf /tmp/metro-bundler-cache-*` or `npm start -- --reset-cache`.
+  4. Remove haste cache: `rm -rf /tmp/haste-map-react-native-packager-*`.
+    at ModuleResolver.resolveDependency (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\node-haste\DependencyGraph\ModuleResolution.js:183:15)
+    at ResolutionRequest.resolveDependency (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\node-haste\DependencyGraph\ResolutionRequest.js:52:18)
+    at DependencyGraph.resolveDependency (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\node-haste\DependencyGraph.js:283:16)
+    at Object.resolve (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\lib\transformHelpers.js:261:42)
+    at dependencies.map.result (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\DeltaBundler\traverseDependencies.js:399:31)
+    at Array.map (<anonymous>)
+    at resolveDependencies (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\DeltaBundler\traverseDependencies.js:396:18)
+    at C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\DeltaBundler\traverseDependencies.js:269:33
+    at Generator.next (<anonymous>)
+    at asyncGeneratorStep (C:\FTSE19MARCH\FTSE-march-2019\React\Day-62\Ex2FlatList\node_modules\metro\src\DeltaBundler\traverseDependencies.js:87:24)
+
+
+    Day 63
+
+    Ex1Linking is native code = the example online will require you to have Whatsapp on your phone for it to run, so we instead will go through opening another application through our buttons.
+
+
+    Ex2AsyncStorage
+
+    import AsyncStorage from '@react-native-community/async-storage';
+install @react-native-community/async-storage
+react-native link @react-native-community/async-storage
+
+
+    Ex3Geolocation
+    Do not forget to input the permissions into the AndroidManifest 
+    In your app specifically ask the phone for permission to use the Geolocation
+    Then you should be able to access the phones geolocation - note that it is the value that is input into the emulator
+
+
+    error: bundling failed: SyntaxError: C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\react-native\scripts\App.js: Unexpected token, expected "(" (26:17)
+
+  24 |   }
+  25 |
+> 26 |   async function requestGeolocationPermission() {
+     |                  ^
+  27 |   try {
+  28 |     const granted = await PermissionsAndroid.request(
+  29 |       PermissionsAndroid.PERMISSIONS.ACCESS_FINE_LOCATION,
+    at Object.raise (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:6344:17)
+    at Object.unexpected (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:7659:16)
+    at Object.expect (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:7645:28)
+    at Object.parseFunctionParams (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:10519:10)
+    at Object.parseFunctionParams (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:2593:11)
+    at Object.parseMethod (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:9330:10)
+    at Object.pushClassMethod (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:10767:30)
+    at Object.pushClassMethod (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:2387:11)
+    at Object.parseClassMemberWithIsStatic (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:10711:14)
+    at Object.parseClassMember (C:\FTSE19MARCH\FTSE-march-2019\React\Day-63\Ex3Geolocation\node_modules\@babel\parser\lib\index.js:10631:10)
+
+    Fixed with no const
+
+    Ex4React-navigation both stack and tab
+
+    We should follow the instructions from reactnavigation.org
+
+    yarn add react-navigation
+    yarn add react-native-gesture-handler
+
+    react-native link react-native-gesture-handler
+
+
+    To finalise installation of react-native-gesture-handler for Android, be sure to make the necessary modifications to MainActivity.java:
+
+package com.reactnavigation.example;
+
+import com.facebook.react.ReactActivity;
++ import com.facebook.react.ReactActivityDelegate;
++ import com.facebook.react.ReactRootView;
++ import com.swmansion.gesturehandler.react.RNGestureHandlerEnabledRootView;
+
+public class MainActivity extends ReactActivity {
+
+  @Override
+  protected String getMainComponentName() {
+    return "Example";
+  }
+
++  @Override
++  protected ReactActivityDelegate createReactActivityDelegate() {
++    return new ReactActivityDelegate(this, getMainComponentName()) {
++      @Override
++      protected ReactRootView createRootView() {
++       return new RNGestureHandlerEnabledRootView(MainActivity.this);
++      }
++    };
++  }
+}
+
+Ex1React-Native-Camera
+
+yarn add react-native-camera 
+
+react-native link react-native-camera
+
+Then we need to add some lines into the AndroidManifest
+android/app src/main/AndroidManifest.xml
+<uses-permission android:name="android.permission.CAMERA" />
+<uses-permission android:name="android.permission.RECORD_AUDIO"/>
+<uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+<uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+
+android/app/build.gradle
+defaultConfig {
+         applicationId "com.cameraexample"
+         minSdkVersion rootProject.ext.minSdkVersion
++        missingDimensionStrategy 'react-native-camera', 'general'
+         targetSdkVersion rootProject.ext.targetSdkVersion
+         versionCode 1
+         versionName "1.0"
+
+
+OneSignal - Push notifications Ex2PushNotifications
+
+Create and generate a Firebase Server Key
+Goto firebase console and sign in,
+w/ sam.o@xccelerate.co
+Create new Project
+Project name:
+OneSignalExample
+Country/region:
+Hong Kong
+Cloud Firestore location
+asia-east2
+
+Get Firebase / Cloud messaging token and sender ID
+Get the server key and sender id == in the overview settings in the cloud messaging tab
+Server key
+AAAA6_upOrE:APA91bFeef5PJXm7cdbnOUzeUmIlN93EmhDcrMa47Dg9FcrfMrIQWg1ze_sd3ieFX-aRedp1U9VYqibZWHVFQm6ReBU1VWn97xN-7nKvX4YrJD8MqFAOJVfsEdzL4WA0Yc2i1VJq2hm5
+Sender ID 
+1013539486385
+
+Now we need to set up our OneSignal Account
+sam.o@xccelerate.co - wc3
+
+Your App ID: 81229137-0369-4593-9045-be1d7cc7ebaa
+
+needed in the component will mount lifecycle method of your application
+
+Then make changes to your app.js
+
+then run
+react-native run-android
+
+Now from our oneSignal dash board we should be able to push a notification to this app. 
+Check to ensure that you have a user (an application) signed up to oneSignal.
+
+Now we can construct the message from the OneSignal dashboard
+Following this we should be able to confirm and send the message
+to see the message on the phone, drag from the top to the middle of the screen
+you should be able to see any push notifcations. 
+
+You can check to see if the message was delivered and clicked on in the onesignal dashboard.

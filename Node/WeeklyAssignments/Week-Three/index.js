@@ -4,6 +4,8 @@ const handlebars = require('express-handlebars');
 const basicAuth = require('express-basic-auth');
 const bodyParser = require('body-parser');
 
+const https = require('https');
+
 // Set up express and environment
 const app = express();
 require('dotenv').config();

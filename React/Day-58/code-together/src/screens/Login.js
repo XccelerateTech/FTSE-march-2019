@@ -54,7 +54,7 @@ import FacebookLogin from 'react-facebook-login'
                 <br />
                 <FacebookLogin  
                 appId ={process.env.REACT_APP_FACEBOOK_APP_ID || ''}
-                    autoLoad={true}
+                    autoLoad={false}
                     fields="name,email,picture"
                     onClick={this.componentClick}
                     callback={this.responseFacebook}/>

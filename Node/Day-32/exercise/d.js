@@ -19,7 +19,7 @@ const inputStream = fs.createReadStream('transaction_record.csv', 'utf-8');
 async function commands() {
     await client.connect();
 
-    console.log(inputStream)
+    // console.log(inputStream)
 
     let rows = [];
 
@@ -34,11 +34,16 @@ async function commands() {
             try {
                 for (let row of rows) {
                     let [action, name, quantity] = row;
+                    // console.log('kk' , row[0], row[1], row[2])
+                    // console.log('pp', action, name, quantity)
                     if (action === 'SELL') {
                         let result = await client.query(`
                     SELECT quantity FROM stock INNER JOIN citrus on stock.citrus_id = citrus.id
                     WHERE citrus.name = $1 GROUP BY quantity;
                     `, [name]);
+
+                        // console.log(result)
+                        // console.log(result.rows[0].quantity)
                         if (result.rows[0].quantity < quantity) {
                             throw new Error(`Not enough ${name} to sell!`);
                         }
@@ -57,8 +62,9 @@ async function commands() {
                     WHERE stock.citrus_id = citrus.id AND name = $2`, [quantity, name]);
                         console.log(`${quantity} ${name} sold!`);
                     }
+                    await client.query('COMMIT');
+
                 }
-                await client.query('COMMIT');
             } catch (e) {
                 await client.query('ROLLBACK')
                 console.log(e)

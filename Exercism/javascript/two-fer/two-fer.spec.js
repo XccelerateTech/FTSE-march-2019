@@ -1,18 +1,20 @@
+import { twoFer } from './two-fer'
 
-var TwoFer = require('./two-fer');
+describe('twoFer()', () => {
+  test('no name given', () => {
+    expect(twoFer()).toEqual("One for you, one for me.")
+  })
 
-describe('Two Fer', function () {
-  var twoFerInstance = new TwoFer();
+  test('a name given', () => {
+    expect(twoFer("Alice")).toEqual("One for Alice, one for me.")
+  })
 
-  it('gives one to you if no parameter given', function () {
-    expect(twoFerInstance.twoFer()).toEqual('One for you, one for me.');
-  });
+  test('another name given', () => {
+    expect(twoFer("Bob")).toEqual("One for Bob, one for me.")
+  })
 
- it('gives one to Alice if \'Alice\' is given', function () {
-    expect(twoFerInstance.twoFer('Alice')).toEqual('One for Alice, one for me.');
-  });
+  test('another name given', () => {
+    expect(twoFer(1)).toEqual("One for 1, one for me.")
+  })
+})
 
-  it('gives one to Bob if \'Bob\' is given', function () {
-    expect(twoFerInstance.twoFer('Bob')).toEqual('One for Bob, one for me.');
-  });
-});

@@ -1,0 +1,4 @@
+A modern Progressive web application should load instantly regardless of network state, it should put its own UI onto the screen without requiring a network round trip (if its offline).
+
+We can accomplish this using service worker. It is a background worker that acts as a programmable proxy, allowing us to control what happens on a request-by-request basis. We can use it to make parts or even all of our React Application to work offline. 
+

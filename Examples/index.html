@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>JQuery Deffered</title>
+</head>
+
+<body>
+    <h1>This is actually all about the script. </h1>
+
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js"
+        integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous">
+        </script>
+
+    <script type='text/javascript'>
+
+        //    var grimer = $.get("https://pokeapi.co/api/v2/pokemon/grimer")
+        //     var weezing = $.get("https://pokeapi.co/api/v2/pokemon/weezing")
+
+        //    $.when(grimer, weezing).done(function(grimerInfo, weezingInfo){
+        //         console.log(grimerInfo);
+        //         console.log(weezingInfo);
+
+        //         var names = [grimerInfo[0].name,' ', weezingInfo[0].name] 
+        //         $('H1').append(names)
+        //    });
+
+        class Person{
+            constructor(options){
+                this.fName = options.name.first;
+                this.lName = options.name.last;
+                this.gender = options.gender;
+                this.nationality = options.nat
+            }
+        }
+
+        var user = $.get("https://randomuser.me/api/");
+        var user1 = $.get("https://randomuser.me/api/");
+        // var user2 = $.get("https://randomuser.me/api/");
+        // var user3 = $.get("https://randomuser.me/api/");
+        // var user4 = $.get("https://randomuser.me/api/");
+
+        //, user2, user3, user4
+
+        // userInfo2, userInfo3, userInfo4
+
+        $.when(user, user1).done(function (userInfo, userInfo1) {
+            console.log(userInfo)
+            console.log(userInfo1)
+            var unpacked = userInfo[0].results[0]
+            var unpacked1 =  userInfo1[0].results[0]
+
+            let person1 = new Person(unpacked);
+            let person2 = new Person(unpacked1);
+
+            let people = [person1, person2]
+            console.log(people);
+
+        })
+
+
+
+    </script>
+
+
+</body>
+
+</html>

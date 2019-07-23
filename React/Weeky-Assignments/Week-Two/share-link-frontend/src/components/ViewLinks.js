@@ -5,7 +5,6 @@ import SearchBar from './SearchBar';
 
 import { connect } from 'react-redux';
 import { ListLinksFromAPIAction } from '../redux/links/actions';
-import { IRootState } from '../redux/store'
 
 import logo from '../logo.svg';
 

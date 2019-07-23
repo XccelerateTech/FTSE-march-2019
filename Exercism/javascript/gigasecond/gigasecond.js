@@ -11,10 +11,18 @@
 
 // module.exports = Gigasecond
 
+// export const gigasecond = (start) => {
+//     return new Date(
+//         start.getTime() + 1000000000000
+//     )
+// }
 
-export const gigaSecond = (startDate) => {
-    return new Date(
-        startDate.getTime() + 1000000000000
-    )
 
-}
+export const gigasecond = (date) => {
+   
+   date =(date.getSeconds() + 1000000000);
+    return date;
+  };
+   
+  
+  

@@ -18,7 +18,7 @@ const readTransactionQueue = async.queue(function (txIndex, callback) {
     axios.get('https://blockchain.info/rawtx/' + txIndex)
         .then((response) => {
             //Once we get the response, we cache it.
-            client.setex(txIndex, 10 * 60, JSON.stringify(response.data), (err) => {
+            client.setex(txIndex, 10 * 60 , JSON.stringify(response.data), (err) => {
                 if (err) {
                     console.log(err);
                 }

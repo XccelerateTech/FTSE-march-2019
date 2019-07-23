@@ -60,8 +60,11 @@ passport.use('local-login', new LocalStrategy(
 passport.use('facebook-strategy', new FacebookStrategy({
     clientID: process.env.APP_ID,
     clientSecret: process.env.APP_SECRET,
-    callbackURL: '/auth/facebook/callback'
+    callbackURL: '/auth/facebook/callback',
+    profileFields: ['id', 'displayName', 'photos', 'email']
 }, async (accessToken, refreshToken, profile, done)=>{
+
+    
     console.log(profile)
 
     let userResult = await knex('users').where({ facebookID: profile.id});
@@ -125,7 +128,7 @@ app.get('/auth/facebook/callback', passport.authenticate('facebook-strategy',{
 
 //initial facebook request 
 app.get('/auth/facebook', passport.authenticate('facebook-strategy', {
-    scope: ['user_friends', 'manage_pages']
+    scope: ['user_friends', 'manage_pages', 'user_birthday', 'user_likes']
 }));
 
 

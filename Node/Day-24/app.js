@@ -40,13 +40,13 @@ function traverseFolders(path){
 
 
 //call the function
-// outPutFolderContent('./files')
+outPutFolderContent('./files')
 
-promisedFS.readdir('./files').then((data)=>{
-    console.log(data)
-})
+// promisedFS.readdir('./files').then((data)=>{
+//     console.log(data)
+// })
 
-promisedFS.stat('./files').then((data)=>{
-    console.log(data.isDirectory())
-})
+// promisedFS.stat('./files').then((data)=>{
+//     console.log(data.isDirectory())
+// })
 

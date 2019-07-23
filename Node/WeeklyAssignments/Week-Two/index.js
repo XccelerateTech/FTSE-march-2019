@@ -47,9 +47,13 @@ app.get('/',  (req, res, next)=>{
 app.get('/', (req,res)=>{
     console.log('index')
         console.log(app.get('view engine'))
-        res.status(200).render('index', {
+        noteService.list(req.auth.user).then((data)=> {
+             res.render('index', {
             user: req.auth.user,
+            notes: data
         });
+        })
+       
     });
 
 

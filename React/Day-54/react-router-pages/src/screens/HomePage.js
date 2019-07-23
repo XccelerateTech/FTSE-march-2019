@@ -8,6 +8,7 @@ export default class HomePage extends React.Component {
             <div>
                 <GoBack />
                 <h1>Welcome to the page, this is our home.</h1>
+                
             </div>
         )
     }

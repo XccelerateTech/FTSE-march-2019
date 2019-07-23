@@ -1,0 +1,72 @@
+<form action="#destination" method="POST" id="form">
+    <input type='text' name="name" placeholder="name" value="John" />
+    <input type="text" name="email" placeholder="email" value="john@example.com" />
+    <input type="text" name="tel" placeholder="tel" value="12345678" />
+    <input type='submit' value="submit" />
+</form>
+
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+
+
+<script type='text/javascript'>
+   
+   
+//    $(function () {
+
+
+//Method one with JQuery AJAX
+    //     $('#form').on('submit', (event) => {
+    //         event.preventDefault();
+    //         var serializedInputString = $('#form').serialize();
+    //         // serializedInputString is name=John&email=john@example.com&tel=12345678
+    //         // It worked for both POST and GET request.
+
+    //         console.log(serializedInputString)  
+    //         //the code below will error, as we cannot just post to a JSON file. We have not handled this request. 
+
+        
+    //         $.ajax({
+    //             type: 'POST',
+    //             url: "./test.json",
+    //             data: serializedInputString,
+    //             dataType: "json",
+    //             success: function (data) {
+    //                 // Success handler
+    //             },
+    //             error: function (data) {
+    //                 // error handler
+    //             }
+    //         });
+    //     });
+    // });
+
+
+//Method Two with JQuery AJAX shorthand
+
+$(function(){
+    $('#form').on('submit', (event) => {
+            event.preventDefault();
+
+            var serialisedArrayInput = $('#form').serializeArray();
+
+            console.log(serialisedArrayInput)
+        $.post('/test.json',
+            {
+                attr1: "value1",
+                attr2: 10
+            }
+        ).done(function(data){
+            console.log("This function will be run if the ajax is successful");
+        }).fail(function(data){
+            console.log("This function will be run if the ajax if failed");
+        }).always(function(data){
+            console.log("This function runs no matter success or fail.");
+        });
+
+    });
+});
+
+
+
+</script>

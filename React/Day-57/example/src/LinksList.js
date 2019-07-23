@@ -14,8 +14,11 @@ export class PureLinkList extends React.Component {
 
     submitSpaceMan = (e) => {
         e.preventDefault()
-
+        this.setState({
+            spaceMan: ""
+        })
         this.props.addSpace(this.state.spaceMan)
+
     }
 
     handleInputChange = (e) => {

@@ -31,7 +31,7 @@ describe('starwars duel testing', () => {
 
     })
 
-    xtest('The outcome should always be the same, anakin becoming injured.', () => {
+    test('The outcome should always be the same, anakin becoming injured.', () => {
         const spyFakeAnakininjure = jest.spyOn(fakeAnakin, 'injure').mockImplementation(() => { console.log('Mocked Injure') })
         const spyFakeAnakinDead = jest.spyOn(fakeAnakin, 'dead').mockImplementation(() => { console.log('Mocked Anakin death') })
 

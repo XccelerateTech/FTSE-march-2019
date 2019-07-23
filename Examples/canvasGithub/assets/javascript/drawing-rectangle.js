@@ -1,5 +1,5 @@
 class DrawingRectangle extends PaintFunction{
-    constructor(contextReal,contextDraft){
+    constructor(contextReal,contextDraft, canvasOptions){
         super();
         this.contextReal = contextReal;
         this.contextDraft = contextDraft;            

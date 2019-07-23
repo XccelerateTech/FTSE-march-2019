@@ -12,6 +12,16 @@
     z-index: 5;
 }
 
+#canvas-real{
+    background-color: aquamarine
+}
+
 .container-fluid{
     width: 1280px
+}
+
+
+#button{
+    position: absolute;
+    top:640px;
 }

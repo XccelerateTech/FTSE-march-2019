@@ -13,9 +13,9 @@ export class InfoPage extends React.Component {
             <div>
                 <button onClick={this.getData}>Get information from backend!</button>
 
-                {this.props.information.map(info => {
+                {this.props.information.map((info, index) => {
                     return (
-                        <div>
+                        <div key={index}>
                             <h3>{info.title}</h3>
                             <p>{info.content}</p>
                         </div>

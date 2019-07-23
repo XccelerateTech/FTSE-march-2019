@@ -51,7 +51,7 @@ passport.use('facebook', new FacebookStrategy({
   callbackURL: `/auth/facebook/callback`
 }, (accessToken, refreshToken, profile, cb)=>{
   console.log("Do I return anything?")
-  console.log(profile)
+  console.log(profile, accessToken)
   return cb(null,{profile: profile, accessToken: accessToken});
 }
 ));
@@ -59,7 +59,7 @@ passport.use('facebook', new FacebookStrategy({
 // we are now storing the user into the redis session store
 passport.serializeUser((user, done)=>{
   done(null, user);
-});
+}); 
 
 passport.deserializeUser((user, done)=>{
   done(null, user);

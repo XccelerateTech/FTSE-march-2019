@@ -15,3 +15,9 @@ let notBarcelona = players.filter(function(player) {
 let playerNames = players.map(function(player){
     return player.name
   })
+
+  //2.1)
+
+let playerNames = players.map((player) => {
+  return player.name
+})

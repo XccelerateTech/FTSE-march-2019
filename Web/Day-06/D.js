@@ -14,8 +14,6 @@ var marks = [
     
     let averageResult = (
     (emptyArray.reduce(function(x, currentVal){
-
-      
         return x + currentVal;
     }, 0)
 ) / marks.length).toFixed();

@@ -2,19 +2,19 @@ const pg = require('pg');
 
 
 // connect to postgres through nodejs
-// const config = {
-//     user: 'postgres',
-//     database: 'fruits',
-//     password: 'postgres',
-//     host: 'localhost',
-//     port: 5432,
-//     max: 10,
-//     idleTimeoutMillis: 30000,
-// }
+const config = {
+    user: 'postgres',
+    database: 'fruits',
+    password: 'postgres',
+    host: 'localhost',
+    port: 5432,
+    max: 10,
+    idleTimeoutMillis: 30000,
+}
 
-// const client = new pg.Client(config);
+const client = new pg.Client(config);
 
-// client.connect();
+client.connect();
 
 // client.query('SELECT * FROM citrus', function(err, results) {
 //     if(err) {
@@ -24,7 +24,20 @@ const pg = require('pg');
 // })
 
 // //=========d==================
-// client.query('SELECT * FROM citrus WHERE color = $1',['orange'], function(err, results){
+
+// function getQuery(query){
+//     client.query(`${query}`, function(err, results){
+//     if(err){
+//         console.log(err)
+//     } 
+//     console.log(results.rows)
+// })
+// }
+
+
+// getQuery(`SELECT * FROM citrus WHERE color = 'yellow'; DROP TABLE example;`)
+
+// client.query(`SELECT * FROM citrus WHERE color = 'yellow';`, function(err, results){
 //     if(err){
 //         console.log(err)
 //     } 
@@ -64,4 +77,7 @@ function getFruit(fruit, color){
     });
 }
 
-getFruit('grapefruit', 'orange')
+getFruit('grapefruit', 'DROP TABLE example;')
+
+
+
