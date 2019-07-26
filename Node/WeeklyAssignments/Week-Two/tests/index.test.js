@@ -1,5 +1,5 @@
 const request = require('supertest');
-const app = require('../index');
+const app = require('../index.js');
 
 describe('Routes', () => {
 
@@ -63,27 +63,29 @@ describe('Routes', () => {
         request(app)
             .get('/random')
             .set('Authorization', auth)
-            .expect(404)
+            .expect(404)    
             .end((err, res)=>{
                 if(err) throw err;
                 done()
             })
     })
 
-    xtest('/ should return the index page', (done)=>{
+    test('/ should return the index page', ()=>{
         let username = 'sam';
         let password = '1234512345';
         var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
     
-        request(app)
+        return request(app)
             .get('/')
             .set('Authorization', auth)
-            .expect(200)
             .expect("Content-Type", "text/html; charset=utf-8")
-            .end((err, res)=>{
-                if(err) throw err;
-                done()
-            })
+            .expect(200)
+
+            // done()
+            // .end((err, res)=>{
+            //     if(err) throw err;
+            //     done()
+            // })
             
     })
 

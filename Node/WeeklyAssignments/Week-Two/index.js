@@ -53,6 +53,8 @@ app.get('/', (req,res)=>{
             notes: data
         });
         })
+
+        // res.render('index')
        
     });
 
