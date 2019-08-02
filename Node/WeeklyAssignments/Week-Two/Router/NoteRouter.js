@@ -9,6 +9,7 @@ class NoteRouter {
         let router = express.Router();
 
         router.get('/', (req,res)=> {
+            console.log('getting router')
             return this.noteService.list(req.auth.user)
                 .then((notes)=> res.json(notes))
                 .catch((err)=> res.status(500).json(err));

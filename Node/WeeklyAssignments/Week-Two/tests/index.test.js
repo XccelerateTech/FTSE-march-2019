@@ -1,6 +1,8 @@
 const request = require('supertest');
 const app = require('../index.js');
 
+const tester = request(app)
+
 describe('Routes', () => {
 
     afterAll(async () => {
@@ -70,23 +72,43 @@ describe('Routes', () => {
             })
     })
 
-    test('/ should return the index page', ()=>{
+    test('/ should return the index page',  (done)=>{
         let username = 'sam';
         let password = '1234512345';
         var auth = 'Basic ' + new Buffer(username + ':' + password).toString('base64');
     
-        return request(app)
-            .get('/')
-            .set('Authorization', auth)
+        request(app)
+       .get('/')
+       
+            .set("Authorization", auth)
+            // .auth('sam', '1234512345')
             .expect("Content-Type", "text/html; charset=utf-8")
             .expect(200)
+            .end(()=>{
+                done()
+                console.log('wow')
+            })
 
-            // done()
-            // .end((err, res)=>{
-            //     if(err) throw err;
-            //     done()
-            // })
+           
             
     })
 
+    
+
 });
+
+
+/*
+https://www.npmjs.com/package/supertest
+
+https://medium.com/@juha.a.hytonen/testing-authenticated-requests-with-supertest-325ccf47c2bb
+
+https://stackoverflow.com/questions/42490579/supertest-not-working-with-routes-that-call-render
+
+https://github.com/visionmedia/supertest/issues/520
+
+https://stackoverflow.com/questions/52840873/getting-500-internal-server-error-while-using-supertest
+
+
+http://visionmedia.github.io/superagent/#authentication
+*/

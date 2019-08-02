@@ -58,16 +58,22 @@ class NoteService {
 
     list(user){
         if(typeof user !== 'undefined'){
+            console.log('trying?')
             return this.init() //just checks to see if it has run once. 
                 .then(()=> {return this.read()})
                 .then(()=>{
                     if(typeof this.notes[user] === 'undefined'){
+                        console.log('wrong')
                         return [];
                     } else {
+                        console.log('wronger')
+
                         return this.notes[user];
                     }
                 });
         } else {
+            console.log('wrongest')
+
              return this.init().then(()=>{
                 return this.read();
             });

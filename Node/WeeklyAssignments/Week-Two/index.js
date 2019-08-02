@@ -32,29 +32,32 @@ app.use(bodyParser.json());
 app.use(basicAuth({
     authorizer: AuthChallenger(JSON.parse(fs.readFileSync(path.join(__dirname, config.users)))),
     challenge: true,
-    realm: 'Note Taking Application'
+    realm: 'Note Taking Application',
+    
 }));
 
 //create a new instance of noteService and pass the directory / files that you want to read from. 
 const noteService = new NoteService(path.join(__dirname, config.notes));
 
-//handle initial get request
-app.get('/',  (req, res, next)=>{
-    console.log('Getting');
-    next();
-});
+// //handle initial get request
+// app.get('/',  (req, res, next)=>{
+//     console.log('Getting');
+//     next();
+// });
+
 
 app.get('/', (req,res)=>{
-    console.log('index')
-        console.log(app.get('view engine'))
+    console.log(req.auth.user)
         noteService.list(req.auth.user).then((data)=> {
-             res.render('index', {
+
+             res.render('index'
+            , {
             user: req.auth.user,
             notes: data
         });
         })
 
-        // res.render('index')
+
        
     });
 
